@@ -1,0 +1,490 @@
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'      -lruby-static  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(void) {return 0;}
+/* end */
+
+"clang -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe    -Werror -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"clang -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  -Wno-error=unused-command-line-argument-hard-error-in-future   -Werror -c conftest.c"
+error: unknown warning option '-Werror=unused-command-line-argument-hard-error-in-future'; did you mean '-Werror=unused-command-line-argument'? [-Werror,-Wunknown-warning-option]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+package configuration for libxslt is not found
+package configuration for libexslt is not found
+"clang -E -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxml/xmlversion.h>
+4: 
+5: #if LIBXML_VERSION < 20621
+6: #error libxml2 is way too old
+7: #endif
+/* end */
+
+"clang -E -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe   conftest.c -o conftest.i"
+conftest.c:6:2: error: libxml2 is too old
+#error libxml2 is too old
+ ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxml/xmlversion.h>
+4: 
+5: #if LIBXML_VERSION < 20902
+6: #error libxml2 is too old
+7: #endif
+/* end */
+
+have_func: checking for xmlParseDoc() in libxml/parser.h... -------------------- no
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'      -lruby-static  -lpthread -ldl -lobjc  "
+Undefined symbols for architecture x86_64:
+  "_xmlParseDoc", referenced from:
+      _t in conftest-6afeda.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxml/parser.h>
+4: 
+5: /*top*/
+6: int main(void) {return 0;}
+7: extern int t(void);
+8: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'      -lruby-static  -lpthread -ldl -lobjc  "
+conftest.c:8:27: error: too few arguments to function call, single argument 'cur' was not specified
+int t(void) { xmlParseDoc(); return 0; }
+              ~~~~~~~~~~~ ^
+/usr/local/opt/libxml2/include/libxml2/libxml/parser.h:841:11: note: 'xmlParseDoc' declared here
+XMLPUBFUN xmlDocPtr XMLCALL
+          ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxml/parser.h>
+4: 
+5: /*top*/
+6: int main(void) {return 0;}
+7: extern int t(void);
+8: int t(void) { xmlParseDoc(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for xmlParseDoc() in -lxml2... -------------------- yes
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'      -lruby-static -lxml2  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxml/parser.h>
+4: 
+5: /*top*/
+6: int main(void) {return 0;}
+7: extern int t(void);
+8: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xsltParseStylesheetDoc() in libxslt/xslt.h... -------------------- no
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lxml2  -lruby-static -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:8:57: error: use of undeclared identifier 'xsltParseStylesheetDoc'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxslt/xslt.h>
+4: 
+5: /*top*/
+6: int main(void) {return 0;}
+7: extern int t(void);
+8: int t(void) { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lxml2  -lruby-static -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:8:15: warning: implicit declaration of function 'xsltParseStylesheetDoc' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { xsltParseStylesheetDoc(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_xsltParseStylesheetDoc", referenced from:
+      _t in conftest-3e5ec4.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxslt/xslt.h>
+4: 
+5: /*top*/
+6: int main(void) {return 0;}
+7: extern int t(void);
+8: int t(void) { xsltParseStylesheetDoc(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for xsltParseStylesheetDoc() in -lxslt... -------------------- yes
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lxml2  -lruby-static -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:8:57: error: use of undeclared identifier 'xsltParseStylesheetDoc'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxslt/xslt.h>
+4: 
+5: /*top*/
+6: int main(void) {return 0;}
+7: extern int t(void);
+8: int t(void) { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lxml2  -lruby-static -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:8:15: warning: implicit declaration of function 'xsltParseStylesheetDoc' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { xsltParseStylesheetDoc(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxslt/xslt.h>
+4: 
+5: /*top*/
+6: int main(void) {return 0;}
+7: extern int t(void);
+8: int t(void) { xsltParseStylesheetDoc(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for exsltFuncRegister() in libexslt/exslt.h... -------------------- no
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lxslt -lxml2  -lruby-static -lxslt -lxml2  -lpthread -ldl -lobjc  "
+Undefined symbols for architecture x86_64:
+  "_exsltFuncRegister", referenced from:
+      _t in conftest-bab6cf.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libexslt/exslt.h>
+4: 
+5: /*top*/
+6: int main(void) {return 0;}
+7: extern int t(void);
+8: int t(void) { void ((*volatile p)()); p = (void ((*)()))exsltFuncRegister; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lxslt -lxml2  -lruby-static -lxslt -lxml2  -lpthread -ldl -lobjc  "
+Undefined symbols for architecture x86_64:
+  "_exsltFuncRegister", referenced from:
+      _t in conftest-38fe44.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libexslt/exslt.h>
+4: 
+5: /*top*/
+6: int main(void) {return 0;}
+7: extern int t(void);
+8: int t(void) { exsltFuncRegister(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for exsltFuncRegister() in -lexslt... -------------------- yes
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libexslt/exslt.h>
+4: 
+5: /*top*/
+6: int main(void) {return 0;}
+7: extern int t(void);
+8: int t(void) { void ((*volatile p)()); p = (void ((*)()))exsltFuncRegister; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlHasFeature()... -------------------- yes
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:57: error: use of undeclared identifier 'xmlHasFeature'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlHasFeature; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlHasFeature; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:15: warning: implicit declaration of function 'xmlHasFeature' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { xmlHasFeature(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { xmlHasFeature(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlFirstElementChild()... -------------------- yes
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:57: error: use of undeclared identifier 'xmlFirstElementChild'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlFirstElementChild; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlFirstElementChild; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:15: warning: implicit declaration of function 'xmlFirstElementChild' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { xmlFirstElementChild(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { xmlFirstElementChild(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetParserStructuredErrors()... -------------------- yes
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:57: error: use of undeclared identifier 'xmlRelaxNGSetParserStructuredErrors'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:15: warning: implicit declaration of function 'xmlRelaxNGSetParserStructuredErrors' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetParserStructuredErrors()... -------------------- yes
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:57: error: use of undeclared identifier 'xmlRelaxNGSetParserStructuredErrors'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:15: warning: implicit declaration of function 'xmlRelaxNGSetParserStructuredErrors' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetValidStructuredErrors()... -------------------- yes
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:57: error: use of undeclared identifier 'xmlRelaxNGSetValidStructuredErrors'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetValidStructuredErrors; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetValidStructuredErrors; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:15: warning: implicit declaration of function 'xmlRelaxNGSetValidStructuredErrors' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { xmlRelaxNGSetValidStructuredErrors(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { xmlRelaxNGSetValidStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlSchemaSetValidStructuredErrors()... -------------------- yes
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:57: error: use of undeclared identifier 'xmlSchemaSetValidStructuredErrors'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetValidStructuredErrors; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetValidStructuredErrors; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:15: warning: implicit declaration of function 'xmlSchemaSetValidStructuredErrors' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { xmlSchemaSetValidStructuredErrors(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { xmlSchemaSetValidStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlSchemaSetParserStructuredErrors()... -------------------- yes
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:57: error: use of undeclared identifier 'xmlSchemaSetParserStructuredErrors'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetParserStructuredErrors; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetParserStructuredErrors; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/x86_64-darwin12.3.0 -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include/ruby-2.0.0 -I. -I/usr/local/opt/libxml2/include/libxml2 -I'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT     -Wno-error=shorten-64-to-32 -pipe  conftest.c  -L. -L/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib -L. -L'/Users/abdulmiah/.rbenv/versions/2.0.0-p0/lib'     -lexslt -lxslt -lxml2  -lruby-static -lexslt -lxslt -lxml2  -lpthread -ldl -lobjc  "
+conftest.c:6:15: warning: implicit declaration of function 'xmlSchemaSetParserStructuredErrors' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { xmlSchemaSetParserStructuredErrors(); return 0; }
+              ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { xmlSchemaSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+

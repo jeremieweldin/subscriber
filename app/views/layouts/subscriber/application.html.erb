@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Subscriber</title>
+  <%= stylesheet_link_tag    "subscriber/application", media: "all" %>
+  <%= javascript_include_tag "subscriber/application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% flash.each do |k,v| %>
+  <div class='flash <%= k %>'><%= v %></div>
+<% end %>
+
+<% if user_signed_in? %>
+  Signed in as <%= current_user.email %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
