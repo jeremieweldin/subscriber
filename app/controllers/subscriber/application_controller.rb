@@ -32,5 +32,10 @@ module Subscriber
         redirect_to "/sign_in" 
       end
     end
+
+    def force_authentication!(account, user) 
+      env["warden"].set_user(user, :scope => :user) 
+      env["warden"].set_user(account, :scope => :account)
+    end
   end
 end
