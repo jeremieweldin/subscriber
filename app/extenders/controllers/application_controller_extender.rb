@@ -26,7 +26,7 @@
     end 
   end
   
-  def force_authentication!(account, user) 
+  def force_authentication!(user) 
     env["warden"].set_user(user, :scope => :user) 
   end 
 end
