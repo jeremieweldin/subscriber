@@ -8,7 +8,7 @@ module Subscriber
     end
 
     def create
-      @account = Subscriber::Account.create(account_params)
+      @account = Subscriber::Account.create_with_owner(account_params)
       if @account.save
         env["warden"].set_user(@account.owner, :scope => :user)
         env["warden"].set_user(@account, :scope => :account)
