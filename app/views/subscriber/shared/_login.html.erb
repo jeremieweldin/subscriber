@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
   Signed in as <%= current_user.email %>
+  Company: <%= current_user.organization.try(:name) %>
 <% else %>
   <%= link_to 'Sign in', subscriber.sign_in_path %>
 <% end %>

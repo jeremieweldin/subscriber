@@ -7,10 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% flash.each do |k,v| %>
-  <div class='flash <%= k %>'><%= v %></div>
-<% end %>
 
+
+<%= render "subscriber/shared/error_messages" %>
 <%= render "subscriber/shared/login" %>
 
 <%= yield %>

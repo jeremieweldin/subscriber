@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302005624) do
+ActiveRecord::Schema.define(version: 20150303190836) do
 
   create_table "subscriber_accounts", force: :cascade do |t|
     t.string   "name"
@@ -26,16 +26,31 @@ ActiveRecord::Schema.define(version: 20150302005624) do
   create_table "subscriber_members", force: :cascade do |t|
     t.integer  "account_id"
     t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "organization_id"
+  end
+
+  add_index "subscriber_members", ["organization_id"], name: "index_subscriber_members_on_organization_id"
+
+  create_table "subscriber_organizations", force: :cascade do |t|
+    t.string   "org_type"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "subscriber_organizations", ["org_type"], name: "index_subscriber_organizations_on_org_type"
 
   create_table "subscriber_users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "organization_id"
   end
+
+  add_index "subscriber_users", ["organization_id"], name: "index_subscriber_users_on_organization_id"
 
   create_table "things", force: :cascade do |t|
     t.string   "name"

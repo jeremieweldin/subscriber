@@ -4,7 +4,6 @@ feature "Accounts" do
     visit subscriber.root_path
     click_link "Account Sign Up"
     fill_in "Name", :with => "Test"
-    fill_in "Name", :with => "Test"
     fill_in "Subdomain", :with => "test"
     fill_in "Email", :with => "subscriber@example.com"
     fill_in "Password", :with => 'password'

@@ -17,6 +17,7 @@ module Subscriber
 
     has_many :members, :class_name => "Subscriber::Member"
     has_many :users, :through => :members
+    has_many :organizations, :through => :members
 
     def self.create_with_owner(params={}) 
       account = new(params)

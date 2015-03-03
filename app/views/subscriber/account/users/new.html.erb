@@ -1,5 +1,16 @@
 <h2>Sign Up</h2>
+
 <%= form_for(@user, :url => do_user_sign_up_url) do |user| %>
+  <%= user.fields_for :organization do |organization| %>
+    <p>
+      <%= organization.label :name %><br>
+      <%= organization.text_field :name %>
+    </p>
+    <p>
+      <%= organization.label :org_type %><br>
+      <%= organization.select :org_type, ['Client', 'Agency'] %>
+    </p>
+  <% end %>
   <%= render "subscriber/account/users/form", :user => user %>
   <%= user.submit "Sign up" %> 
 <% end %>
