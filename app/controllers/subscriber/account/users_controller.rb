@@ -10,12 +10,12 @@ module Subscriber
     def create
       account = Subscriber::Account.find_by!(:subdomain => request.subdomain)
       organization = Subscriber::Organization.where(name: user_params[:organization_attributes][:name], org_type: user_params[:organization_attributes][:org_type])
-      p organization
       if organization.any?
         params[:user].delete(:organization_attributes)
         @user = account.users.create(user_params)
         if @user.save
           @user.organization = organization.last
+          @user.member.organization_id = organization.last.id
           force_authentication!(@user)
           flash[:success] = "You have signed up successfully."
           redirect_to root_path
@@ -26,6 +26,8 @@ module Subscriber
       else
         @user = account.users.create(user_params)
         if @user.valid?
+          @user.member.organization_id = @user.organization.id
+          @user.save
           force_authentication!(@user)
           flash[:success] = "You have signed up successfully."
           redirect_to root_path
