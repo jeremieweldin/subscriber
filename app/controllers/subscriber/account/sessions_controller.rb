@@ -16,5 +16,10 @@ module Subscriber
         render :action => "new"
       end 
     end
+
+    def destroy
+      env["warden"].logout
+      redirect_to root_path
+    end
   end
 end

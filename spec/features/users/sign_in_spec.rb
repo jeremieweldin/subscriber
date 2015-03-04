@@ -12,15 +12,16 @@ feature "User sign in" do
     scenario "signs in as an account owner successfully" do
       visit root_url
       expect(page.current_url).to eq(sign_in_url)
-       fill_in "Email", :with => account.owner.email
-       fill_in "Password", :with => "password"
-       click_button "Sign in"
+      fill_in "Email", :with => account.owner.email
+      fill_in "Password", :with => "password"
+      click_button "Sign in"
       expect(page).to have_content("You are now signed in.")
       expect(page.current_url).to eq(root_url)
     end
   end
 
-  scenario "attempts sign in with an invalid password and fails" do visit subscriber.root_url(:subdomain => account.subdomain) 
+  scenario "attempts sign in with an invalid password and fails" do 
+    visit subscriber.root_url(:subdomain => account.subdomain) 
     expect(page.current_url).to eq(sign_in_url)
     expect(page).to have_content("Please sign in.")
     fill_in "Email", :with => account.owner.email
