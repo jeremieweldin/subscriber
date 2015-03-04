@@ -41,6 +41,21 @@ module Subscriber
       end
     end
 
+    def edit
+      @user = Subscriber::User.find(params[:id])
+    end
+
+    def update
+      @user = Subscriber::User.find(params[:id])
+      if @user.update_attributes(user_params)
+        flash[:success] = "Profile updated."
+        redirect_to edit_user_path
+      else
+        flash[:error] = "Profile could not be updated."
+        redirect_to edit_user_path
+      end
+    end
+
     private
       def user_params
         params.require(:user).permit(:email, :password, :password_confirmation, {:organization_attributes => [

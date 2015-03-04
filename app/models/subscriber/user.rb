@@ -5,6 +5,8 @@ module Subscriber
     has_one :member, :class_name => "Subscriber::Member"
     accepts_nested_attributes_for :organization
 
+    validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+
     after_create :send_signup_email
     
     def send_signup_email

@@ -1,0 +1,8 @@
+%h2 Edit profile
+= form_for @user, :url => edit_user_path(params[:id]) do |f|
+  %p
+    = f.label :email
+    %br
+    = f.email_field :email
+  %p
+    = f.submit "Update profile"
