@@ -6,6 +6,12 @@ module Subscriber
     #
     #   en.user_mailer.password_reset.subject
     #
+    
+    def sign_up_success(user)
+      @user = user
+      mail :to => user.email, :subject => "Welcome to rankedHire!"
+    end
+
     def password_reset(user)
       @user = user
       mail :to => user.email, :subject => "Password Reset"

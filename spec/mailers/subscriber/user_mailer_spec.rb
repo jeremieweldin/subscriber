@@ -17,5 +17,19 @@ module Subscriber
       end
     end
 
+    describe "sign_up_success" do
+      let(:mail) { UserMailer.sign_up_success(user) }
+
+      it "renders the headers" do
+        expect(mail.subject).to eq("Welcome to rankedHire!")
+        expect(mail.to).to eq([user.email])
+        expect(mail.from).to eq(["from@example.com"])
+      end
+
+      it "renders the body" do
+        expect(mail.body.encoded).to match("Welcome to rankedHiRe!")
+      end
+    end
+
   end
 end
