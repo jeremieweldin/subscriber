@@ -19,7 +19,8 @@ module Subscriber
 
     def destroy
       env["warden"].logout
-      redirect_to root_path
+      flash[:notice] = "You are now signed out."
+      redirect_to sign_in_path
     end
   end
 end

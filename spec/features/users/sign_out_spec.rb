@@ -14,7 +14,7 @@ feature "User signout" do
     visit root_url
     expect(page).to have_content("Sign out")
     click_link "Sign out"
-    expect(page).to have_content("Please sign in.")
+    expect(page).to have_content("You are now signed out.")
     expect(page.current_url).to eq(sign_in_url)
   end
 end
