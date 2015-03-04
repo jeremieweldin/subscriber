@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %title Subscriber
+    = stylesheet_link_tag    "subscriber/application", media: "all"
+    = javascript_include_tag "subscriber/application"
+    = csrf_meta_tags
+  %body
+    = render "subscriber/shared/error_messages"
+    = render "subscriber/shared/login"
+    = yield

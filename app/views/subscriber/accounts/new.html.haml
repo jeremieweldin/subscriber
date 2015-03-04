@@ -1,0 +1,14 @@
+%h2 Sign Up
+= form_for(@account) do |account|
+  = account.error_messages
+  %p
+    = account.label :name
+    %br/
+    = account.text_field :name
+  %p
+    = account.label :subdomain
+    %br/
+    = account.text_field :subdomain
+  = account.fields_for :owner do |owner|
+    = render "subscriber/account/users/form", :user => owner
+  = account.submit

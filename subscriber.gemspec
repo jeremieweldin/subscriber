@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
   s.add_dependency "warden", "1.2.3"
   s.add_dependency "dynamic_form", "1.1.4"
   s.add_dependency "houser", "1.0.2"
+  s.add_dependency "haml"
+  s.add_dependency "haml-rails"
   
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails", "3.0.1"

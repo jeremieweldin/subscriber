@@ -6,6 +6,7 @@ require 'rspec/rails'
 require "capybara/rspec"
 require "factory_girl"
 require "database_cleaner"
+require 'haml'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
