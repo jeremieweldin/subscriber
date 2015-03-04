@@ -18,19 +18,31 @@ module Subscriber
       end
     end
 
+    def show
+      
+    end
+
     def edit
-      @user = Subscriber::User.find_by_password_reset_token!(params[:id])
+      @user = Subscriber::User.find_by!(password_reset_token: params[:id])
     end
 
     def update
-      @user = Subscriber::User.find_by_password_reset_token!(params[:id])
+      @user = Subscriber::User.find_by!(password_reset_token: params[:id])
+      p @user
       if @user.password_reset_sent_at < 2.hours.ago
-        redirect_to new_password_reset_path, :alert => "Password reset has expired."
-      elsif @user.update_attributes(params[:user])
-        redirect_to root_path, :notice => "Password has been reset!"
+        flash[:error] = "Password reset has expired."
+        redirect_to new_password_reset_path
+      elsif @user.update_attributes(password_params[:user])
+        flash[:success] = "Password has been reset!"
+        redirect_to sign_in_path
       else
         render :edit
       end
     end
+
+    private
+      def password_params
+        params.permit(:user => [:password, :password_confirmation])
+      end
   end
 end

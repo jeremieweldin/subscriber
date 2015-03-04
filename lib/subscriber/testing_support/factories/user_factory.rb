@@ -3,5 +3,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "test#{n}@example.com" } 
     password "password"
     password_confirmation "password"
+    password_reset_token "zxyb"
+    password_reset_sent_at Time.now
   end 
 end
