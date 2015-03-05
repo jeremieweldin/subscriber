@@ -1,2 +1,4 @@
-- flash.each do |k,v|
-  %div{:class => "flash #{k}"}= v
+- flash.each do |key, value|
+  %div{class: "#{key} alert-danger"}
+    %button.close{"data-dismiss" => "alert", :type => "button", :class => "flash"} ×
+    %h5=value
