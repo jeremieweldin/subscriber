@@ -1,8 +1,10 @@
 module Subscriber
   class User < ActiveRecord::Base
     has_secure_password
-    belongs_to :organization, :class_name => "Subscriber::Organization"
+    
     has_one :member, :class_name => "Subscriber::Member"
+    belongs_to :meta, polymorphic: true
+    belongs_to :organization, :class_name => "Subscriber::Organization"
     accepts_nested_attributes_for :organization
 
     validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }

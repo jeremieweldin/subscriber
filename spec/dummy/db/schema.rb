@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304020610) do
+ActiveRecord::Schema.define(version: 20150309163408) do
 
   create_table "subscriber_accounts", force: :cascade do |t|
     t.string   "name"
@@ -50,8 +50,11 @@ ActiveRecord::Schema.define(version: 20150304020610) do
     t.integer  "organization_id"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.integer  "meta_id"
+    t.string   "meta_type"
   end
 
+  add_index "subscriber_users", ["meta_id", "meta_type"], name: "index_subscriber_users_on_meta_id_and_meta_type"
   add_index "subscriber_users", ["organization_id"], name: "index_subscriber_users_on_organization_id"
 
   create_table "things", force: :cascade do |t|
