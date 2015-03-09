@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304020610) do
+ActiveRecord::Schema.define(version: 20150309225054) do
 
   create_table "subscriber_accounts", force: :cascade do |t|
     t.string   "name"
@@ -38,9 +38,11 @@ ActiveRecord::Schema.define(version: 20150304020610) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "owner_id"
   end
 
   add_index "subscriber_organizations", ["org_type"], name: "index_subscriber_organizations_on_org_type"
+  add_index "subscriber_organizations", ["owner_id"], name: "index_subscriber_organizations_on_owner_id"
 
   create_table "subscriber_users", force: :cascade do |t|
     t.string   "email"

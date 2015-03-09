@@ -28,7 +28,9 @@ module Subscriber
       else
         @user = account.users.create(user_params)
         if @user.valid?
+          @user.organization.owner_id = @user.id
           @user.member.organization_id = @user.organization.id
+          @user.organization.save!
           @user.member.save!
           force_authentication!(@user)
           flash[:success] = "You have signed up successfully."
