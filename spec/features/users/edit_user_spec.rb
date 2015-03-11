@@ -1,6 +1,7 @@
 require "rails_helper"
 require "subscriber/testing_support/factories/account_factory"
 require "subscriber/testing_support/factories/user_factory"
+require "subscriber/testing_support/factories/organization_factory"
 
 feature "User edit" do
   

@@ -5,5 +5,6 @@ FactoryGirl.define do
     password_confirmation "password"
     password_reset_token "zxyb"
     password_reset_sent_at Time.now
+    association :organization, :factory => :organization
   end 
 end

@@ -2,6 +2,7 @@ require "rails_helper"
 require 'subscriber/testing_support/subdomain_helpers'
 require "subscriber/testing_support/factories/account_factory"
 require "subscriber/testing_support/factories/user_factory"
+require "subscriber/testing_support/factories/organization_factory"
 
 feature "User sign in" do
   extend Subscriber::TestingSupport::SubdomainHelpers

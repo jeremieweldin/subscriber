@@ -1,5 +1,7 @@
 require "rails_helper"
 require "subscriber/testing_support/factories/user_factory"
+require "subscriber/testing_support/factories/organization_factory"
+
 module Subscriber
   RSpec.describe UserMailer, :type => :mailer do
     let!(:user) { FactoryGirl.create(:user) }
