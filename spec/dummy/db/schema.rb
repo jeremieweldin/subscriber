@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309225054) do
+ActiveRecord::Schema.define(version: 20150320172531) do
 
   create_table "subscriber_accounts", force: :cascade do |t|
     t.string   "name"
@@ -36,9 +36,14 @@ ActiveRecord::Schema.define(version: 20150309225054) do
   create_table "subscriber_organizations", force: :cascade do |t|
     t.string   "org_type"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "owner_id"
+    t.string   "industry"
+    t.string   "city"
+    t.string   "state"
+    t.string   "description"
+    t.integer  "employees"
   end
 
   add_index "subscriber_organizations", ["org_type"], name: "index_subscriber_organizations_on_org_type"

@@ -1,4 +1,5 @@
 %h2 Sign Up
+= render "subscriber/shared/error_messages"
 = form_for(@user, :url => do_user_sign_up_url) do |user|
   = user.fields_for :organization do |organization|
     %p

@@ -1,4 +1,5 @@
 %h2 Edit profile
+= render "subscriber/shared/error_messages"
 = form_for @user, :url => edit_user_path(params[:id]) do |f|
   %p
     = f.label :email

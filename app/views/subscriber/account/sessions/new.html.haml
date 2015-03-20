@@ -1,4 +1,5 @@
 %h2 Sign in
+= render "subscriber/shared/error_messages"
 = form_for @user, :url => sessions_url do |f|
   %p
     = f.label :email
