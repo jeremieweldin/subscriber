@@ -8,7 +8,7 @@ module Subscriber
       name
     end
 
-    def location
+    def org_location
       "#{city}, #{state}"
     end
   end

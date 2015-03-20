@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20150320172531) do
     t.string   "industry"
     t.string   "city"
     t.string   "state"
-    t.string   "description"
-    t.integer  "employees"
+    t.text     "description"
+    t.string   "employees"
   end
 
   add_index "subscriber_organizations", ["org_type"], name: "index_subscriber_organizations_on_org_type"
