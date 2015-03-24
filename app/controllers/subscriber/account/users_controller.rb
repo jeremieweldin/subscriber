@@ -61,8 +61,8 @@ module Subscriber
 
     private
       def user_params
-        params.require(:user).permit(:email, :password, :password_confirmation, {:organization_attributes => [
-          :name, :org_type
+        params.require(:user).permit(:email, :password, :password_confirmation, :full_name, {:organization_attributes => [
+          :name, :org_type, :industry, :city, :state, :description, :employees
         ]})
       end
   end
