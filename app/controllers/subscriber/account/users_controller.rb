@@ -1,5 +1,5 @@
 require_dependency "subscriber/application_controller"
-
+require "ruby_identicon"
 module Subscriber
   class Account::UsersController < ApplicationController
     def new
@@ -29,6 +29,7 @@ module Subscriber
         @user = account.users.create(user_params)
         if @user.valid?
           @user.organization.owner_id = @user.id
+          @user.organization.avatar = "data:image/png;base64,#{RubyIdenticon.create_base64(SecureRandom.base64(16).tr('+/=lIO0', 'pqrsxyz'))}"
           @user.member.organization_id = @user.organization.id
           @user.organization.save!
           @user.member.save!

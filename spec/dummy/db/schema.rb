@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320172531) do
+ActiveRecord::Schema.define(version: 20150324220241) do
 
   create_table "subscriber_accounts", force: :cascade do |t|
     t.string   "name"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150320172531) do
     t.string   "state"
     t.text     "description"
     t.string   "employees"
+    t.string   "avatar"
   end
 
   add_index "subscriber_organizations", ["org_type"], name: "index_subscriber_organizations_on_org_type"
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150320172531) do
     t.integer  "organization_id"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.string   "full_name"
   end
 
   add_index "subscriber_users", ["organization_id"], name: "index_subscriber_users_on_organization_id"
