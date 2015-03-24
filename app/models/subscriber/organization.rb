@@ -11,5 +11,9 @@ module Subscriber
     def org_location
       "#{city}, #{state}"
     end
+
+    def org_owner_id
+      owner_id
+    end
   end
 end
