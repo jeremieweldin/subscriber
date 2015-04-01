@@ -23,7 +23,7 @@ module Subscriber
           redirect_to root_path
         else
           flash[:error] = "Sorry, sign up unsuccessful."
-          render :new 
+          redirect_to :back 
         end
       else
         @user = account.users.create(user_params)
@@ -38,7 +38,7 @@ module Subscriber
           redirect_to root_path
         else
           flash[:error] = "Sorry, sign up unsuccessful."
-          render :new 
+          redirect_to :back 
         end
         p @user.member
       end
