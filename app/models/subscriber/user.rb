@@ -6,7 +6,7 @@ module Subscriber
     has_one :member, :class_name => "Subscriber::Member"
     accepts_nested_attributes_for :organization
     validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-    validates :password, :format => {:with => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).{6,}.+$/, message: "must be at least 6 characters and include one capital and lowercase letter, one number, and one special character."}
+    validates :password, :format => {:with => /\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).{6,}.+\z/, message: "must be at least 6 characters and include one capital and lowercase letter, one number, and one special character."}
     after_create :send_signup_email
     
     def send_signup_email
