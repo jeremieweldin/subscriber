@@ -18,6 +18,7 @@ module Subscriber
           @user.organization = organization.last
           @user.member.organization_id = organization.last.id
           @user.member.save!
+          @user.save!
           force_authentication!(@user)
           flash[:success] = "You have signed up successfully."
           redirect_to root_path
