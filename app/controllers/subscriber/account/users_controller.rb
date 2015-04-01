@@ -14,7 +14,7 @@ module Subscriber
       if organization.any?
         params[:user].delete(:organization_attributes)
         @user = account.users.create(user_params)
-        if @user.save
+        if @user.valid?
           @user.organization = organization.last
           @user.member.organization_id = organization.last.id
           @user.member.save!
