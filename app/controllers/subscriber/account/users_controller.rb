@@ -23,7 +23,7 @@ module Subscriber
           flash[:success] = "You have signed up successfully."
           redirect_to root_path
         else
-          flash[:error] = "Sorry, sign up unsuccessful."
+          flash[:error] = @user.errors.full_messages
           redirect_to :back 
         end
       else
@@ -38,7 +38,7 @@ module Subscriber
           flash[:success] = "You have signed up successfully."
           redirect_to root_path
         else
-          flash[:error] = "Sorry, sign up unsuccessful."
+          flash[:error] = @user.errors.full_messages
           redirect_to :back 
         end
         p @user.member
