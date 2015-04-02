@@ -41,8 +41,8 @@ feature "User password reset" do
   scenario "resets password if token is valid" do
     visit edit_password_reset_url
     expect(page).to have_content("Reset password")
-    fill_in "Password", :with => "password"
-    fill_in "Password confirmation", :with => "password"
+    fill_in "Password", :with => "Password1*"
+    fill_in "Password confirmation", :with => "Password1*"
     click_button "Update Password"
     expect(page).to have_content("Password has been reset!")
     expect(page.current_url).to eq(sign_in_url)
@@ -51,8 +51,8 @@ feature "User password reset" do
   scenario "does not reset password with invalid token" do
     visit edit_password_reset_url_exp
     expect(page).to have_content("Reset password")
-    fill_in "Password", :with => "password"
-    fill_in "Password confirmation", :with => "password"
+    fill_in "Password", :with => "Password1*"
+    fill_in "Password confirmation", :with => "Password1*"
     click_button "Update Password"
     expect(page).to have_content("Password reset has expired.")
     expect(page.current_url).to eq("#{password_reset_url}/new")

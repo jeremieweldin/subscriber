@@ -14,7 +14,7 @@ feature "User sign in" do
       visit root_url
       expect(page.current_url).to eq(sign_in_url)
       fill_in "Email", :with => account.owner.email
-      fill_in "Password", :with => "password"
+      fill_in "Password", :with => "Password1*"
       click_button "Sign in"
       expect(page).to have_content("You are now signed in.")
       expect(page.current_url).to eq(root_url)
@@ -37,7 +37,7 @@ feature "User sign in" do
     expect(page.current_url).to eq(sign_in_url)
     expect(page).to have_content("Please sign in.")
     fill_in "Email", :with => "foo@example.com"
-    fill_in "Password", :with => "password"
+    fill_in "Password", :with => "Password1*"
     click_button "Sign in"
     expect(page).to have_content("Invalid email or password.")
     expect(page.current_url).to eq(sign_in_url)
@@ -49,7 +49,7 @@ feature "User sign in" do
     expect(page.current_url).to eq(sign_in_url)
     expect(page).to have_content("Please sign in.")
     fill_in "Email", :with => other_account.owner.email
-    fill_in "Password", :with => "password"
+    fill_in "Password", :with => "Password1*"
     click_button "Sign in"
     expect(page).to have_content("Invalid email or password.")
     expect(page.current_url).to eq(sign_in_url)

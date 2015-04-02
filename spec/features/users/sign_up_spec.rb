@@ -14,8 +14,8 @@ feature "User signup" do
     fill_in "Name", :with => "rankedHiRe"
     select "Client", :from => "Org type"
     fill_in "Email", :with => "user@example.com"
-    fill_in "Password", :with => "password"
-    fill_in "Password confirmation", :with => "password"
+    fill_in "Password", :with => "Password1*"
+    fill_in "Password confirmation", :with => "Password1*"
     click_button "Sign up"
     expect(page).to have_content("You have signed up successfully.")
     expect(page).to have_content("rankedHiRe")
@@ -30,10 +30,10 @@ feature "User signup" do
     fill_in "Name", :with => ""
     select "Client", :from => "Org type"
     fill_in "Email", :with => "user@example.com"
-    fill_in "Password", :with => "password"
-    fill_in "Password confirmation", :with => "password"
+    fill_in "Password", :with => "Password1*"
+    fill_in "Password confirmation", :with => "Password1*"
     click_button "Sign up"
     expect(page.current_url).to eq("http://#{account.subdomain}.example.com/sign_up")
-    expect(page).to have_content("Sorry, sign up unsuccessful.")
+    expect(page).to have_content("Organization name can't be blank")
   end
 end
