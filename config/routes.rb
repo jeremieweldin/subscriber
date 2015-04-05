@@ -19,6 +19,8 @@ Subscriber::Engine.routes.draw do
   end
 
   root "dashboard#index"
-  # get "/sign_up", :to => "accounts#new", :as => :sign_up
-  # post "/accounts", :to => "accounts#create", :as => :accounts
+  if Rails.env? == "development"
+    get "/sign_up", :to => "accounts#new", :as => :sign_up
+    post "/accounts", :to => "accounts#create", :as => :accounts
+  end
 end
