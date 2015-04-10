@@ -1,0 +1,8 @@
+-if @user && @user.organization.owner_id == @user.id
+  Welcome to rankedHiRe!
+-else 
+  Welcome to rankedHiRe!
+  Here's your login credentials:
+
+  = "login: #{@user.email}"
+  = "password: #{@user.password}"

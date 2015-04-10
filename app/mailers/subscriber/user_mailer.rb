@@ -9,6 +9,8 @@ module Subscriber
     
     def sign_up_success(user)
       @user = user
+      p "*******************************"
+      p @user.password
       mail :to => user.email, :subject => "Welcome to rankedHire!"
     end
 

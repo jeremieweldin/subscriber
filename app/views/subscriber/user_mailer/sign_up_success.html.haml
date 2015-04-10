@@ -1,0 +1,8 @@
+-if @user && @user.organization.owner_id == @user.id
+  Welcome to rankedHiRe!
+-else 
+  %h3 Welcome to rankedHiRe!
+  %h6 Here's your login credentials:
+
+  %p= "login: #{@user.email}"
+  %p= "password: #{@user.password}"
