@@ -1,4 +1,4 @@
--if @user && @user.organization.owner_id == @user.id
+-if @user && @user.organization.try(:owner_id) == @user.id
   Welcome to rankedHiRe!
 -else 
   Welcome to rankedHiRe!
