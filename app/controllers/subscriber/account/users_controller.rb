@@ -3,7 +3,7 @@ require "ruby_identicon"
 module Subscriber
   class Account::UsersController < ApplicationController
     def new
-      @user = Subscriber::User.new
+      @user = Subscriber::User.new(params[:user])
       @user.build_organization
     end
 
@@ -24,7 +24,7 @@ module Subscriber
           redirect_to root_path
         else
           flash[:error] = @user.errors.full_messages
-          redirect_to :back 
+          render action: 'new'
         end
       else
         @user = account.users.create(user_params)
@@ -39,7 +39,7 @@ module Subscriber
           redirect_to root_path
         else
           flash[:error] = @user.errors.full_messages
-          redirect_to :back 
+          render action: 'new'
         end
         p @user.member
       end
