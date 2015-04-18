@@ -9,6 +9,7 @@ module Subscriber
     end
 
     def org_location
+      return nil unless city && state
       "#{city}, #{state}"
     end
 
