@@ -9,9 +9,10 @@ module Subscriber
     
     def sign_up_success(user)
       @user = user
+      @inviter = User.find(user.organization.try(:owner_id))
       p "*******************************"
       p @user.password
-      mail :to => user.email, :subject => "Welcome to rankedHire!"
+      mail :to => user.email, :subject => "You’ve Been Invited To Join rankedHiRe"
     end
 
     def password_reset(user)

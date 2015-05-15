@@ -20,7 +20,15 @@ module Subscriber
     
     def send_signup_email
       #to-do: put this in a background job
-      Subscriber::UserMailer.sign_up_success(self).deliver
+      if self.organization.try(:owner_id) == self.id
+        if self.organization.try(:org_type) == "Agency"
+          Subscriber::UserMailer.sign_up_agency_success(self).deliver
+        else
+          Subscriber::UserMailer.sign_up_client_success(self).deliver
+        end
+      else
+        Subscriber::UserMailer.sign_up_success(self).deliver
+      end
     end
     
     def send_password_reset

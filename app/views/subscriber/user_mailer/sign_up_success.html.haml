@@ -1,8 +1,40 @@
--if @user && @user.organization.try(:owner_id) == @user.id
-  Welcome to rankedHiRe!
--else 
-  %h3 Welcome to rankedHiRe!
-  %h6 Here's your login credentials:
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Welcome to rankedHiRe
+    = render "css"
+  %body
+    %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "75%", style: "margin: 50px auto;"}
+      %tr
+        %td{:align => "center", style: "background: #fff;"}
+          / This setup makes the nav background stretch the whole width of the screen.
+          %table.container{:cellpadding => "3", :cellspacing => "0", :width => "650px", style: 'margin-top: 25px;'}
+            %tr
+              %td.text-center{:colspan => "4"}
+                %a.brand{:href => "http://www.rankedhire.com/"}
+                  %img{:alt => "rankedHiRe", :src => "http://www.rankedhire.com/assets/logo.png", :width => "350"}
+          %hr/
+              
+      %tr
+        %td{:align => "center", :bgcolor => "#FFFFFF", style: "padding:20px"}
+          %table.container{:cellpadding => "3", :cellspacing => "0", :width => "650px"}
+            %tr
+              %td
+                %p.text-center= "#{@inviter.full_name} has invited you to join #{@inviter.org_name}'s team on rankedHiRe. Please use the link and login credentials below to sign in:"
+            %tr
+              %td.text-center
+                .login-box
+                  %h4{style: "margin-top: 0px;"} Login:
+                  %small.text-muted= @user.email
+                  %h4 Password:
+                  %small.text-muted= @user.password
+                  %a.btn.btn-green{href: "http://app.rankedhire.com/sign_in"} Sign in to rankedHiRe
 
-  %p= "login: #{@user.email}"
-  %p= "password: #{@user.password}"
+      %tr
+        %td{:align => "center", :bgcolor => "#FFFFFF"}
+          %hr/
+          %table.container{:cellpadding => "3", :cellspacing => "0", :width => "650px", style: 'margin-top: 25px;margin-bottom:15px;'}
+            %tr
+              %td.text-center
+                %p= "©#{Date.today.year} rankedHiRe"
