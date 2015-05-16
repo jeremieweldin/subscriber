@@ -19,6 +19,8 @@ module Subscriber
           @user.member.organization_id = organization.last.id
           @user.member.save!
           @user.save!
+          @user.reload
+          @user.send_signup_email
           force_authentication!(@user)
           flash[:success] = "You have signed up successfully."
           redirect_to root_path
@@ -34,6 +36,8 @@ module Subscriber
           @user.member.organization_id = @user.organization.id
           @user.organization.save!
           @user.member.save!
+          @user.organization.reload
+          @user.organization.send_signup_email
           force_authentication!(@user)
           flash[:success] = "You have signed up successfully."
           redirect_to root_path

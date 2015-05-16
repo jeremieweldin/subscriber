@@ -16,19 +16,9 @@ module Subscriber
         message: "must be at least 7 characters and include one capital and lowercase letter, one number, and one special character."},
           :on => :update,
             :allow_blank => true
-    after_create :send_signup_email
     
     def send_signup_email
-      #to-do: put this in a background job
-      if self.organization.try(:owner_id) == self.id
-        if self.organization.try(:org_type) == "Agency"
-          Subscriber::UserMailer.sign_up_agency_success(self).deliver
-        else
-          Subscriber::UserMailer.sign_up_client_success(self).deliver
-        end
-      else
-        Subscriber::UserMailer.sign_up_success(self).deliver if self.organization.present?
-      end
+      Subscriber::UserMailer.sign_up_success(self).deliver if self.organization.present?
     end
     
     def send_password_reset
