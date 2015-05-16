@@ -1,0 +1,55 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Welcome to rankedHiRe
+    = render "css"
+  %body
+    %table{:border => "0", :cellpadding => "0", :cellspacing => "0", style: "margin: 50px auto;"}
+      %tr
+        %td{:align => "center", style: "background: #fff;"}
+          / This setup makes the nav background stretch the whole width of the screen.
+          %table{:cellpadding => "3", :cellspacing => "0", :width => "650px", style: 'margin-top: 25px;'}
+            %tr
+              %td.text-center{:colspan => "4"}
+                %a.brand{:href => "http://www.rankedhire.com/"}
+                  %img{:alt => "rankedHiRe", :src => "http://www.rankedhire.com/assets/logo.png", :width => "350"}
+          %hr/
+              
+      %tr
+        %td{:align => "center", :bgcolor => "#FFFFFF", style: "padding:15px 50px"}
+          %table{:cellpadding => "3", :cellspacing => "0", :width => "650px"}
+            %tr
+              %td
+                %p Thanks for joining rankedHiRe. We are committed to building a platform that makes placing talent into new businesses as easy as possible. We will continue to onboard more hiring entities, strengthen our candidate matching algorithm, and improve the user experience. We expect the following best practices will help staffing agencies receive more candidate views and ultimately place more talent on our platform:
+                %ul
+                  %li
+                    %strong Post Top Talent 
+                    %span – Businesses use staffing agencies to procure highly skilled talent they can’t find themselves. Make sure that’s what you’re offering.
+                  %li
+                    %strong Keep Talent Up-to-Date 
+                    %span – It’s not a good user experience if businesses are requesting talent that has already been placed elsewhere. Make sure to update your candidate availability regularly.
+                  %li
+                    %strong Be Responsive 
+                    %span – Clients want to fill positions as quickly as possible. The faster you can respond to candidate introduction requests and client messages, the greater your chances of making a placement.
+                  %li
+                    %strong Price Competitively 
+                    %span – Businesses have many ways to source candidates and are increasingly going directly to talent. Competitively pricing your candidates’ wages and agency fees will help you win new business. 
+
+                %p Should we ever fail to meet your expectations, please let us know. Our support team is always available to answer any questions or issues that you might be having. 
+            %tr
+              %td.text-center
+                %a.btn.btn-green{href: "http://app.rankedhire.com/sign_in"} Sign in to rankedHiRe
+            %tr
+              %td 
+                %p Best regards,
+                %p Matt Rotella
+                %p CEO, rankedHiRe
+
+      %tr
+        %td{:align => "center", :bgcolor => "#FFFFFF"}
+          %hr/
+          %table{:cellpadding => "3", :cellspacing => "0", :width => "650px", style: 'margin-top: 25px;margin-bottom:15px;'}
+            %tr
+              %td.text-center
+                %small= "©#{Date.today.year} rankedHiRe"

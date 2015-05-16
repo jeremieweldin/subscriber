@@ -1,0 +1,55 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Welcome to rankedHiRe
+    = render "css"
+  %body
+    %table{:border => "0", :cellpadding => "0", :cellspacing => "0", style: "margin: 50px auto;"}
+      %tr
+        %td{:align => "center", style: "background: #fff;"}
+          / This setup makes the nav background stretch the whole width of the screen.
+          %table{:cellpadding => "3", :cellspacing => "0", :width => "650px", style: 'margin-top: 25px;'}
+            %tr
+              %td.text-center{:colspan => "4"}
+                %a.brand{:href => "http://www.rankedhire.com/"}
+                  %img{:alt => "rankedHiRe", :src => "http://www.rankedhire.com/assets/logo.png", :width => "350"}
+          %hr/
+              
+      %tr
+        %td{:align => "center", :bgcolor => "#FFFFFF", style: "padding:15px 50px"}
+          %table{:cellpadding => "3", :cellspacing => "0", :width => "650px"}
+            %tr
+              %td
+                %p Thanks for joining rankedHiRe. We are committed to building a platform that makes finding and comparing staffing agency talent as easy as possible. We will continue to onboard more agencies, strengthen our candidate matching algorithm, and improve the user experience. The following best practices will help businesses successfully source candidates on our platform:
+                %ul
+                  %li
+                    %strong Be Specific
+                    %span – Know what you’re looking for. The more detailed you are in your search criteria, the better we can match you with your ideal candidates.
+                  %li
+                    %strong Request Multiple Introductions
+                    %span – Businesses who request 3+ candidate introductions have more success than those who only request one introduction.
+                  %li
+                    %strong Be Conscious of Market Rates
+                    %span – Offering a competitive salary increases the available talent pool of candidates interested in your position. Advertise your compensation accordingly.
+                  %li
+                    %strong Post the Job
+                    %span – Let staffing firms work to fill your position without locking-in to the candidates they find. Browse and engage with only the ones you want.
+
+                %p Should we ever fail to meet your expectations, please let us know. Our support team is always available to answer any questions or issues that you might be having. 
+            %tr
+              %td.text-center
+                %a.btn.btn-green{href: "http://app.rankedhire.com/sign_in"} Sign in to rankedHiRe
+            %tr
+              %td 
+                %p Best regards,
+                %p Matt Rotella
+                %p CEO, rankedHiRe
+
+      %tr
+        %td{:align => "center", :bgcolor => "#FFFFFF"}
+          %hr/
+          %table{:cellpadding => "3", :cellspacing => "0", :width => "650px", style: 'margin-top: 25px;margin-bottom:15px;'}
+            %tr
+              %td.text-center
+                %small= "©#{Date.today.year} rankedHiRe"

@@ -1,8 +1,8 @@
--if @user && @user.organization.try(:owner_id) == @user.id
-  Welcome to rankedHiRe!
--else 
-  Welcome to rankedHiRe!
-  Here's your login credentials:
+/ -if @user && @user.organization.try(:owner_id) == @user.id
+/   Welcome to rankedHiRe!
+/ -else 
+/   Welcome to rankedHiRe!
+/   Here's your login credentials:
 
-  = "login: #{@user.email}"
-  = "password: #{@user.password}"
+/   = "login: #{@user.email}"
+/   = "password: #{@user.password}"

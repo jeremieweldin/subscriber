@@ -5,11 +5,11 @@
     %title Welcome to rankedHiRe
     = render "css"
   %body
-    %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "75%", style: "margin: 50px auto;"}
+    %table{:border => "0", :cellpadding => "0", :cellspacing => "0", style: "margin: 50px auto;"}
       %tr
         %td{:align => "center", style: "background: #fff;"}
           / This setup makes the nav background stretch the whole width of the screen.
-          %table.container{:cellpadding => "3", :cellspacing => "0", :width => "650px", style: 'margin-top: 25px;'}
+          %table{:cellpadding => "3", :cellspacing => "0", :width => "650px", style: 'margin-top: 25px;'}
             %tr
               %td.text-center{:colspan => "4"}
                 %a.brand{:href => "http://www.rankedhire.com/"}
@@ -18,7 +18,7 @@
               
       %tr
         %td{:align => "center", :bgcolor => "#FFFFFF", style: "padding:20px"}
-          %table.container{:cellpadding => "3", :cellspacing => "0", :width => "650px"}
+          %table{:cellpadding => "3", :cellspacing => "0", :width => "650px"}
             %tr
               %td
                 %p.text-center= "#{@inviter.full_name} has invited you to join #{@inviter.org_name}'s team on rankedHiRe. Please use the link and login credentials below to sign in:"
@@ -34,7 +34,7 @@
       %tr
         %td{:align => "center", :bgcolor => "#FFFFFF"}
           %hr/
-          %table.container{:cellpadding => "3", :cellspacing => "0", :width => "650px", style: 'margin-top: 25px;margin-bottom:15px;'}
+          %table{:cellpadding => "3", :cellspacing => "0", :width => "650px", style: 'margin-top: 25px;margin-bottom:15px;'}
             %tr
               %td.text-center
-                %p= "©#{Date.today.year} rankedHiRe"
+                %small= "©#{Date.today.year} rankedHiRe"

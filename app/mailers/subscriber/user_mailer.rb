@@ -15,6 +15,16 @@ module Subscriber
       mail :to => user.email, :subject => "You’ve Been Invited To Join rankedHiRe"
     end
 
+    def sign_up_agency_success(user)
+      @user = user
+      mail :to => user.email, :subject => "Placing More Talent with rankedHiRe"
+    end
+
+    def sign_up_client_success(user)
+      @user = user
+      mail :to => user.email, :subject => "Finding the Best Talent with rankedHiRe"
+    end
+
     def password_reset(user)
       @user = user
       mail :to => user.email, :subject => "Password Reset"
