@@ -9,7 +9,7 @@ module Subscriber
     
     def sign_up_success(user)
       @user = user
-      @inviter = User.find(user.organization.try(:owner_id))
+      @inviter = User.find(user.organization.try(:owner_id)) if user.organization
       p "*******************************"
       p @user.password
       mail :to => user.email, :subject => "You’ve Been Invited To Join rankedHiRe"

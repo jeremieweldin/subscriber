@@ -27,7 +27,7 @@ module Subscriber
           Subscriber::UserMailer.sign_up_client_success(self).deliver
         end
       else
-        Subscriber::UserMailer.sign_up_success(self).deliver
+        Subscriber::UserMailer.sign_up_success(self).deliver if self.organization.present?
       end
     end
     
