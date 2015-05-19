@@ -19,6 +19,7 @@ Subscriber::Engine.routes.draw do
   end
 
   root "dashboard#index"
+  get "/about", :to => "dashboard#about", :as => :about
   get "/sign_up", :to => "accounts#new", :as => :sign_up
   post "/accounts", :to => "accounts#create", :as => :accounts
 end
