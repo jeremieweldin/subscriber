@@ -20,6 +20,10 @@ module Subscriber
     def send_signup_email
       Subscriber::UserMailer.sign_up_success(self).deliver if self.organization.present?
     end
+
+    def send_approval_email
+      Subscriber::UserMailer.approval_email(self).deliver if self.organization.present?
+    end
     
     def send_password_reset
       generate_token(:password_reset_token)

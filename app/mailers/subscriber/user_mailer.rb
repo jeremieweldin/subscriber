@@ -25,6 +25,11 @@ module Subscriber
       mail :to => user.email, :subject => "Finding the Best Talent with rankedHiRe"
     end
 
+    def approval_email(user)
+      @user = user
+      mail :to => "support@rankedhire.com", :subject => "A New User Has Signed Up"
+    end
+
     def password_reset(user)
       @user = user
       mail :to => user.email, :subject => "Password Reset"
