@@ -6,6 +6,7 @@ module Subscriber
     #
     #   en.user_mailer.password_reset.subject
     #
+    default from: '"rankedHiRe Support" <support@rankedhire.com>'
     
     def sign_up_success(user)
       @user = user
