@@ -5,6 +5,7 @@ module Subscriber
     def new
       @user = Subscriber::User.new(params[:user])
       @user.build_organization
+      @user.organization.org_type = params[:org_type] rescue nil
     end
 
     def create
