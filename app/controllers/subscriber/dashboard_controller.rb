@@ -7,5 +7,8 @@ module Subscriber
 
     def about
     end
+
+    def vms_lite
+    end
   end
 end
