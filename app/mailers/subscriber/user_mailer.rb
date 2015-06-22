@@ -16,6 +16,15 @@ module Subscriber
       mail :to => user.email, :subject => "You’ve Been Invited To Join rankedHiRe"
     end
 
+    def vendor_sign_up_success(user)
+      @user = user
+      @inviter = @user.member.account.owner
+      @subdomain = @user.member.account.subdomain
+      p "*******************************"
+      p @user.password
+      mail :to => user.email, :subject => "You’ve Been Invited To Join rankedHiRe"
+    end
+
     def sign_up_agency_success(user)
       @user = user
       mail :to => user.email, :subject => "Placing More Talent with rankedHiRe"

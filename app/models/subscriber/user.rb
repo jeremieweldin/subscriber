@@ -21,6 +21,10 @@ module Subscriber
       Subscriber::UserMailer.sign_up_success(self).deliver if self.organization.present?
     end
 
+    def send_vendor_signup_email
+      Subscriber::UserMailer.vendor_sign_up_success(self).deliver if self.organization.present?
+    end
+
     def send_approval_email
       Subscriber::UserMailer.approval_email(self).deliver if self.organization.present?
     end
