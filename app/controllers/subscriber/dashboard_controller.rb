@@ -10,5 +10,8 @@ module Subscriber
 
     def vms_lite
     end
+
+    def white_label
+    end
   end
 end

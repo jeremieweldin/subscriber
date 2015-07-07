@@ -21,6 +21,7 @@ Subscriber::Engine.routes.draw do
   root "dashboard#index"
   get "/about", :to => "dashboard#about", :as => :about
   get "/vms_lite", :to => "dashboard#vms_lite", :as => :vms_lite
+  get "/white_label", :to => "dashboard#white_label", :as => :white_label
   # get "/sign_up", :to => "accounts#new", :as => :sign_up
   post "/accounts", :to => "accounts#create", :as => :accounts
 end
